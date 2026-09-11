@@ -268,15 +268,17 @@ footer{background:var(--onyx-deep);border-top:1px solid var(--ivory-06);padding:
 .foot-col a:hover{color:var(--ivory)}
 .foot-bottom{padding-top:26px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.8rem;color:var(--ivory-55)}
 
-/* ============ SONIC BOOM: Problem / pain ============ */
-.pain-grid{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,20px);margin-top:clamp(30px,4vw,44px)}
-@media(min-width:720px){.pain-grid{grid-template-columns:1fr 1fr}}
-.pain-card{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:24px 24px;background:rgba(244,245,247,.04);border:1px solid var(--ivory-06);border-left:3px solid var(--gold)}
-.pain-card .x{width:30px;height:30px;max-width:30px;max-height:30px;flex:none;border-radius:50%;background:rgba(249,178,51,.14);display:grid;place-items:center}
-.pain-card .x svg{width:16px;height:16px;color:var(--gold)}
-.pain-card p{color:var(--ivory-82);font-size:.98rem;line-height:1.55}
-.pain-card p b{color:var(--white);display:block;font-weight:600;margin-bottom:2px}
-.pain-turn{margin-top:clamp(26px,3vw,38px);font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.6vw,2rem);color:var(--gold);line-height:1.3;max-width:24ch}
+/* ============ Problem — struck-out editorial list ============ */
+.strike-list{list-style:none;margin-top:clamp(28px,4vw,48px);display:grid;gap:clamp(12px,1.8vw,22px)}
+.strike-list li{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,3.6vw,2.9rem);line-height:1.15;color:var(--ivory-55);width:-moz-fit-content;width:fit-content;max-width:100%;position:relative;transition:color .4s}
+.strike-list li::after{content:"";position:absolute;left:-.05em;right:-.05em;top:54%;height:clamp(3px,.4vw,5px);background:var(--gold);border-radius:3px;transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease-zoom)}
+[data-reveal].in .strike-list li::after,.reveal.in .strike-list li::after{transform:scaleX(1)}
+[data-reveal].in .strike-list li:nth-child(2)::after{transition-delay:.12s}
+[data-reveal].in .strike-list li:nth-child(3)::after{transition-delay:.24s}
+[data-reveal].in .strike-list li:nth-child(4)::after{transition-delay:.36s}
+@media(prefers-reduced-motion:reduce){.strike-list li::after{transform:scaleX(1)}}
+.pain-turn{margin-top:clamp(32px,4vw,52px);font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.6rem);line-height:1.2;color:var(--white);max-width:20ch;font-weight:600}
+.pain-turn b{color:var(--gold);font-weight:600}
 
 /* ============ SONIC BOOM: trust closer ============ */
 .trust-closer{margin-top:24px;display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(249,178,51,.1);border:1px solid rgba(249,178,51,.28);color:var(--ivory)}
