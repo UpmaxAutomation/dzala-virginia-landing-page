@@ -12,8 +12,8 @@
   --onyx-deep:#272d33;
   --ivory:#F4F5F7;
   --white:#fff;
-  --gold:#F9B233;
-  --gold-dark:#E09B22;
+  --gold:#daa14c;
+  --gold-dark:#c1883a;
   --stone:#6B7078;
   --prose:#535353;
   --muted-dark:#9B9B9B;
@@ -22,7 +22,7 @@
   --ivory-55:rgba(244,245,247,.55);
   --ivory-12:rgba(244,245,247,.12);
   --ivory-06:rgba(244,245,247,.06);
-  --gold-18:rgba(249,178,51,.18);
+  --gold-18:rgba(218,161,76,.18);
   /* Fonts matched to manikfurniture.com */
   --serif:'Rajdhani',system-ui,sans-serif;      /* display / headings */
   --sans:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;  /* body */
@@ -80,10 +80,13 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spa
   padding:16px 30px;border:2px solid transparent;cursor:pointer;transition:background .28s,color .28s,transform .28s,box-shadow .28s,border-color .28s;min-height:54px;line-height:1}
 .btn svg{width:17px;height:17px;transition:transform .28s}
 .btn--primary{background:var(--gold);color:var(--onyx)}
-.btn--primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 16px 34px -16px rgba(249,178,51,.6)}
+.btn--primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 16px 34px -16px rgba(218,161,76,.6)}
 .btn--primary:hover svg{transform:translateX(3px)}
 .btn--outline-light{background:transparent;color:var(--ivory);border-color:var(--ivory-55)}
 .btn--outline-light:hover{background:var(--ivory);color:var(--onyx);border-color:var(--ivory);transform:translateY(-2px)}
+.btn--light{background:var(--ivory);color:var(--onyx);border-color:var(--ivory)}
+.btn--light:hover{background:#fff;color:var(--onyx);border-color:#fff;transform:translateY(-2px);box-shadow:0 22px 46px -16px rgba(0,0,0,.6),0 0 0 4px rgba(244,245,247,.16)}
+.btn--light:hover svg{transform:translateX(3px)}
 .btn--dark{background:var(--onyx);color:var(--gold);border-color:var(--onyx)}
 .btn--dark:hover{background:var(--onyx-deep);transform:translateY(-2px)}
 
@@ -253,7 +256,7 @@ form .sub{font-size:.88rem;color:var(--prose);margin-bottom:22px}
 .field{margin-bottom:16px}
 .field label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);margin-bottom:7px}
 .field input,.field select,.field textarea{width:100%;padding:14px 15px;border:1px solid rgba(48,55,62,.2);background:#fff;font-family:var(--sans);font-size:1rem;color:var(--onyx);transition:border-color .2s,box-shadow .2s}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold-dark);box-shadow:0 0 0 3px rgba(249,178,51,.22)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold-dark);box-shadow:0 0 0 3px rgba(218,161,76,.22)}
 .field textarea{resize:vertical;min-height:90px}
 .form-row{display:grid;grid-template-columns:1fr;gap:16px}
 @media(min-width:480px){.form-row{grid-template-columns:1fr 1fr}}
@@ -288,7 +291,7 @@ footer{background:var(--onyx-deep);border-top:1px solid var(--ivory-06);padding:
 .pts .d{color:var(--ivory-72);font-size:.98rem;line-height:1.6;max-width:52ch}
 
 /* ============ SONIC BOOM: trust closer ============ */
-.trust-closer{margin-top:24px;display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(249,178,51,.1);border:1px solid rgba(249,178,51,.28);color:var(--ivory)}
+.trust-closer{margin-top:24px;display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(218,161,76,.1);border:1px solid rgba(218,161,76,.28);color:var(--ivory)}
 .trust-closer svg{width:24px;height:24px;color:var(--gold);flex:none}
 .trust-closer b{color:var(--gold)}
 .trust-badges{display:flex;flex-wrap:wrap;gap:10px 12px;margin-top:22px}
