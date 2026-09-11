@@ -144,22 +144,30 @@ header.scrolled{border-color:var(--gold-18)}
 .ph-tag{position:absolute;top:14px;left:14px;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ivory-82);background:rgba(39,45,51,.7);padding:5px 9px;border-radius:5px;z-index:2}
 .scrim-bottom{position:absolute;inset:0;background:linear-gradient(to top,rgba(24,28,32,.9) 0%,rgba(24,28,32,.4) 40%,transparent 72%);z-index:1}
 
-/* ---- Hero ---- */
-.hero{position:relative;min-height:clamp(560px,86vh,860px);display:flex;align-items:flex-end;overflow:hidden}
+/* ---- Hero (manik-style: dark environment, centered, text pops) ---- */
+.hero{position:relative;min-height:clamp(600px,90vh,900px);display:flex;align-items:center;overflow:hidden;text-align:center}
 .hero__media{position:absolute;inset:0;z-index:0}
-.hero__img{width:100%;height:100%;object-fit:cover}
+.hero__img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);filter:saturate(.92) contrast(1.02)}
+/* darker, more even overlay so the photo becomes an atmosphere and the type pops */
 .hero__scrim{position:absolute;inset:0;z-index:1;background:
-    linear-gradient(to top,rgba(24,28,32,.92) 0%,rgba(24,28,32,.55) 42%,rgba(24,28,32,.25) 100%),
-    linear-gradient(to right,rgba(24,28,32,.6),transparent 60%)}
-.hero__inner{position:relative;z-index:2;padding-block:clamp(48px,7vw,96px);width:100%}
-.hero__copy{max-width:760px}
-.hero__h1{margin:16px 0 20px;color:var(--white)}
-.hero__sub{color:var(--ivory-82);font-size:clamp(1.08rem,1.5vw,1.32rem);max-width:60ch;margin-bottom:32px;line-height:1.6}
-.hero__btns{display:flex;flex-wrap:wrap;gap:16px}
-.hero__meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:30px;font-size:.86rem;color:var(--ivory-72)}
+    radial-gradient(130% 100% at 50% 42%, rgba(16,19,22,.34) 0%, rgba(16,19,22,.72) 62%, rgba(16,19,22,.9) 100%),
+    linear-gradient(to bottom, rgba(16,19,22,.55) 0%, rgba(16,19,22,.35) 45%, rgba(16,19,22,.85) 100%)}
+.hero__inner{position:relative;z-index:2;padding-block:clamp(56px,8vw,110px);width:100%}
+.hero__copy{max-width:900px;margin-inline:auto}
+.hero__copy .eyebrow,.hero__copy .kicker{text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.hero__h1{margin:18px 0 22px;color:var(--white);
+  text-shadow:0 1px 0 rgba(0,0,0,.35), 0 6px 20px rgba(0,0,0,.6), 0 22px 60px rgba(0,0,0,.55)}
+.hero__sub{color:#e9ecf1;font-size:clamp(1.08rem,1.5vw,1.34rem);max-width:62ch;margin:0 auto 34px;line-height:1.62;
+  text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.hero__btns{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.hero__btns .btn{box-shadow:0 14px 34px -14px rgba(0,0,0,.7)}
+.hero__meta{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 22px;margin-top:30px;font-size:.86rem;color:#dfe3e8;text-shadow:0 2px 10px rgba(0,0,0,.6)}
 .hero__meta .stars{color:var(--gold);letter-spacing:2px}
-.hero__meta b{color:var(--ivory)}
+.hero__meta b{color:var(--white)}
 .hero__dot{width:6px;height:6px;border-radius:50%;background:var(--ivory-55);display:inline-block}
+/* center the hero trust badges on lp too */
+.hero .trust-badges{justify-content:center}
+.hero .trust-badges span{text-shadow:none}
 
 /* ---- section head ---- */
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(34px,4vw,52px)}
