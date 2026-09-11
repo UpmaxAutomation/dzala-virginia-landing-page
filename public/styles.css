@@ -23,9 +23,9 @@
   --ivory-12:rgba(244,245,247,.12);
   --ivory-06:rgba(244,245,247,.06);
   --gold-18:rgba(218,161,76,.18);
-  /* Fonts matched to manikfurniture.com */
-  --serif:'Rajdhani',system-ui,sans-serif;      /* display / headings */
-  --sans:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;  /* body */
+  /* Fonts matched to manikfurniture.com — Plus Jakarta Sans throughout */
+  --serif:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;  /* headings (bold) */
+  --sans:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;   /* body */
   --gutter:clamp(20px,3vw,56px);
   --header-h:88px;
   --section-y:clamp(52px,6.5vw,88px);
@@ -44,8 +44,8 @@ a{color:inherit;text-decoration:none}
 .container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:var(--gutter)}
 
 /* ---- Type ---- */
-h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacing:.005em}
-.h1{font-size:clamp(2.5rem,5.6vw,4.6rem);line-height:1.03;font-weight:700}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacing:-.015em}
+.h1{font-size:clamp(2.5rem,5.6vw,4.6rem);line-height:1.04;font-weight:800}
 .h2{font-size:clamp(2rem,3.8vw,3.2rem)}
 .h2--sm{font-size:clamp(1.7rem,3vw,2.5rem)}
 .h3{font-size:clamp(1.15rem,1.7vw,1.4rem)}
@@ -318,3 +318,37 @@ footer{background:var(--onyx-deep);border-top:1px solid var(--ivory-06);padding:
 .callbar .btn{flex:1;padding:14px;min-height:50px}
 @media(min-width:1020px){.callbar{display:none}}
 @media(max-width:1019px){body{padding-bottom:74px}}
+
+/* ---- hero inline quote form ---- */
+.hero-form{max-width:940px;margin:30px auto 0;text-align:left;background:rgba(244,245,247,.97);padding:clamp(14px,1.6vw,18px);box-shadow:0 28px 64px -24px rgba(0,0,0,.78),0 0 0 1px rgba(244,245,247,.14)}
+.hero-form__grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:920px){.hero-form__grid{grid-template-columns:1.1fr 1fr 1fr auto;align-items:end}}
+.hero-form .field{margin-bottom:0}
+.hero-form .field label{color:var(--prose)}
+.hero-form .field input,.hero-form .field select{height:54px}
+.hero-form .btn{width:100%;white-space:nowrap}
+/* the hero form already offers both actions - keep the sticky bar out of its way */
+.callbar.is-hidden{transform:translateY(110%);pointer-events:none}
+.callbar{transition:transform .28s var(--ease-zoom)}
+@media(prefers-reduced-motion:reduce){.callbar{transition:none}}
+.hero-form__note{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:12px;font-size:.78rem;font-weight:600;color:var(--prose)}
+.hero-form__note span{display:inline-flex;align-items:center;gap:6px}
+.hero-form__note svg{width:14px;height:14px;color:var(--gold-dark)}
+.hero-form .form-ok{padding:24px 10px}
+.hero-form .form-ok h3{color:var(--onyx)}
+
+/* ---- faq ---- */
+.faq{max-width:840px;margin:clamp(30px,4vw,48px) auto 0}
+.faq details{border-top:1px solid var(--ivory-12)}
+.faq details:last-of-type{border-bottom:1px solid var(--ivory-12)}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:clamp(18px,2.2vw,24px) 0;font-family:var(--serif);font-weight:600;font-size:clamp(1.04rem,1.6vw,1.26rem);line-height:1.35;color:var(--white);transition:color .22s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:1.6rem;line-height:1;font-weight:400}
+.faq details[open] summary::after{content:"\2212"}
+.faq summary:hover{color:var(--gold)}
+.faq summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.faq__a{color:var(--ivory-72);font-size:.98rem;line-height:1.7;max-width:68ch;padding-bottom:clamp(18px,2.2vw,24px)}
+.faq__a a{color:var(--gold);font-weight:600}
+
+/* ---- 3-up feature grid (6 items = two even rows) ---- */
+@media(min-width:1040px){.feature-grid--3{grid-template-columns:repeat(3,1fr)}}

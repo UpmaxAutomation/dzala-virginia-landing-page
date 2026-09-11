@@ -9,9 +9,24 @@ const jsonLd = {
   "email":"dzalausa@gmail.com",
   "priceRange":"$$",
   "address":{"@type":"PostalAddress","streetAddress":"8609 Westwood Center Dr, Ste 110, Unit 119","addressLocality":"Tysons","addressRegion":"VA","postalCode":"22182","addressCountry":"US"},
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"47"},
-  "areaServed":["Tysons","McLean","Vienna","Oakton","Great Falls","Arlington","Alexandria","Falls Church","Reston","Herndon","Bethesda","Potomac"],
-  "makesOffer":["Kitchen Remodeling","Bathroom Remodeling","Basement Remodeling","Whole-Home Remodeling","Home Additions","Bedroom Remodeling","Garage Remodeling","Commercial Remodeling"]
+  "areaServed":["Tysons","McLean","Arlington","Alexandria","Great Falls","Bethesda","Potomac"],
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"19:00"}
+  ],
+  "makesOffer":["Bathroom Remodeling","Kitchen Remodeling","Whole-Home Remodeling","Basement Remodeling","Home Additions","Bedroom Remodeling","Garage Remodeling","Commercial Remodeling"]
+};
+
+const faqLd = {
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    ["How much will my remodel cost?","There is no honest answer to that before someone has seen the space. We come out, look at the scope and give you a written, itemized quote - free, and yours to keep whether or not you hire us."],
+    ["Do you offer financing?","Yes. Financing options are available, and we walk you through them during the consultation so you know what the project looks like month to month before you commit."],
+    ["What does the warranty cover?","Every project carries a five-year warranty on our labor. Materials and appliances keep their own manufacturer warranties, which we hand over at the final walk-through."],
+    ["Who pulls the permits?","We do. Drawings, permit applications and inspections in Fairfax County, Arlington County and Montgomery County, MD are handled by us as part of the project."],
+    ["Do you design, or do I need my own designer?","We are design and build under one roof. You can bring your own drawings, but most clients start with us from a blank room - we design the layout around how you use the space, then build it with our own crew."],
+    ["Which areas do you serve?","Tysons, McLean, Arlington, Alexandria and Great Falls in Virginia, plus Bethesda and Potomac in Maryland."]
+  ].map(([q,a])=>({"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":a}}))
 };
 ---
 <!DOCTYPE html>
@@ -20,7 +35,7 @@ const jsonLd = {
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Free Remodeling Quote — Dzala General Contractor, Northern Virginia</title>
-<meta name="description" content="Get a free, written remodeling quote from Dzala General Contractor. Kitchen, bath, basement & whole-home in Tysons and Northern Virginia. Licensed, insured, 5.0★ across 47 Google reviews." />
+<meta name="description" content="Get a free, written remodeling quote from Dzala General Contractor. Kitchen, bath, basement & whole-home in Tysons and Northern Virginia. Licensed, insured, 5 stars on Google." />
 <link rel="canonical" href="https://dzalacontractor.com/" />
 <meta name="theme-color" content="#30373E" />
 
@@ -31,14 +46,14 @@ const jsonLd = {
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Dzala General Contractor" />
 <meta property="og:title" content="Free Remodeling Quote — Dzala General Contractor" />
-<meta property="og:description" content="Kitchen, bath, basement & whole-home remodeling in Northern Virginia. Licensed, insured, 5.0★ across 47 Google reviews. Get your free written quote." />
+<meta property="og:description" content="Kitchen, bath, basement & whole-home remodeling in Northern Virginia. Licensed, insured, 5 stars on Google. Get your free written quote." />
 <meta property="og:url" content="https://dzalacontractor.com/" />
 <meta property="og:image" content="https://dzalacontractor.com/assets/logo/dzala-logo-dark.webp" />
 <meta name="twitter:card" content="summary_large_image" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="/styles.css" />
 </head>
@@ -47,11 +62,11 @@ const jsonLd = {
 
 <div class="topbar">
   <div class="container topbar__in">
-    <span class="tb-item"><span class="stars">★★★★★</span> <b>5.0</b> · 47 Google reviews</span>
+    <span class="tb-item"><span class="stars">★★★★★</span> <b>5.0</b> on Google</span>
     <span class="tb-sep tb-hide-sm" aria-hidden="true"></span>
     <span class="tb-item tb-hide-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg> Licensed &amp; insured</span>
     <span class="tb-sep tb-hide-sm" aria-hidden="true"></span>
-    <span class="tb-item tb-hide-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 24/7 availability</span>
+    <span class="tb-item tb-hide-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Mon&ndash;Sat 8am&ndash;7pm</span>
   </div>
 </div>
 
@@ -81,15 +96,52 @@ const jsonLd = {
       <div class="eyebrow">Tysons · Northern Virginia</div>
       <h1 class="h1 hero__h1">Your remodel, done right the first time.</h1>
       <p class="hero__sub">Kitchens, baths, basements and whole-home renovations — one crew, one written price, delivered on time. Backed by over a decade of experience.</p>
-      <div class="hero__btns">
-        <a class="btn btn--light" href="#quote">Get My Free Quote
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
+      <form class="hero-form" id="hero-form" novalidate>
+        <div class="form-fields">
+          <div class="hero-form__grid">
+            <div class="field">
+              <label for="hf-service">What are you remodeling?</label>
+              <select id="hf-service" name="service" required>
+                <option value="" selected disabled>Select a project…</option>
+                <option>Bathroom Remodeling</option>
+                <option>Kitchen Remodeling</option>
+                <option>Whole-Home Remodeling</option>
+                <option>Basement Remodeling</option>
+                <option>Home Addition</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="hf-name">Full name</label>
+              <input id="hf-name" name="name" type="text" autocomplete="name" required placeholder="Jane Homeowner" />
+            </div>
+            <div class="field">
+              <label for="hf-phone">Phone</label>
+              <input id="hf-phone" name="phone" type="tel" autocomplete="tel" required placeholder="(703) 000-0000" />
+            </div>
+            <div class="field">
+              <button type="submit" class="btn btn--primary">Get My Free Quote
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+          <p class="hero-form__note">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Free written quote</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> No obligation</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg> Reply within one business day</span>
+          </p>
+        </div>
+        <div class="form-ok">
+          <div class="ok-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 13 4 4L19 7"/></svg></div>
+          <h3>Thanks — we've got it.</h3>
+          <p>A Dzala project lead will reach out within one business day. Need us sooner? Call <a href="tel:+17039191645">(703) 919-1645</a>.</p>
+        </div>
+      </form>
       <div class="trust-badges">
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg> 5.0 · 47 Google reviews</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg> 5.0 on Google</span>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/></svg> Licensed &amp; insured</span>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> 24/7 availability</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg> 5-year labor warranty</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg> Financing available</span>
       </div>
     </div>
   </div>
@@ -132,8 +184,8 @@ const jsonLd = {
   <div class="container stats__grid">
     <div class="stat"><div class="stat__n">10+</div><div class="stat__label">Years of experience</div></div>
     <div class="stat"><div class="stat__n">5.0★</div><div class="stat__label">Google rating</div></div>
-    <div class="stat"><div class="stat__n">47</div><div class="stat__label">Google reviews</div></div>
-    <div class="stat"><div class="stat__n">24/7</div><div class="stat__label">Availability</div></div>
+    <div class="stat"><div class="stat__n">Free</div><div class="stat__label">Written estimates</div></div>
+    <div class="stat"><div class="stat__n">5 yr</div><div class="stat__label">Labor warranty</div></div>
   </div>
 </section>
 <section class="section section--deep" data-reveal>
@@ -142,7 +194,55 @@ const jsonLd = {
       <span class="tst__mark" aria-hidden="true">&ldquo;</span>
       <span class="tst__stars">★★★★★</span>
       <p class="tst__text">Professional, courteous, and highly skilled. The quality of the work was <em>exceptional</em> — completed within the agreed timeline and budget.</p>
-      <footer class="tst__attr">Verified Google review · one of 47 five-star ratings</footer>
+      <footer class="tst__attr">Verified Google review · one of our five-star ratings</footer>
+    </div>
+  </div>
+</section>
+
+<!-- 3b · WHY DZALA -->
+<section class="section--lg section--onyx" data-reveal id="why">
+  <div class="container">
+    <svg class="roofline" viewBox="0 0 44 16" fill="none" aria-hidden="true"><path d="M2 14 22 3l20 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="eyebrow u-mt-18">Why Dzala</div>
+    <h2 class="h2 u-mt-14 measure--title-wide">Six reasons homeowners here stop shopping around.</h2>
+    <div class="feature-grid feature-grid--3">
+
+      <div class="feature-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M10 21v-6h4v6"/></svg></div>
+        <h3 class="h3 feature-card__title">Design and build, one team</h3>
+        <p class="feature-card__copy">We draw it and we build it. No handing you off between a designer, a contractor and three subs who blame each other.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3 class="h3 feature-card__title">5-year labor warranty</h3>
+        <p class="feature-card__copy">Every project carries a five-year warranty on our workmanship — in writing, not a handshake.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
+        <h3 class="h3 feature-card__title">Licensed &amp; insured</h3>
+        <p class="feature-card__copy">Fully licensed and insured in Virginia and Maryland. Ask for the certificate and you will have it the same day.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></div>
+        <h3 class="h3 feature-card__title">We handle the permits</h3>
+        <p class="feature-card__copy">Drawings, permit applications and inspections in Fairfax County, Arlington County and Montgomery County, MD — our paperwork, not yours.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></div>
+        <h3 class="h3 feature-card__title">Financing available</h3>
+        <p class="feature-card__copy">A bigger scope should not mean a smaller result. We can walk you through financing options before you commit.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3 class="h3 feature-card__title">Local, and it shows</h3>
+        <p class="feature-card__copy">Based in Tysons with more than a decade of work across Northern Virginia — and a 5.0 rating on Google to go with it.</p>
+      </div>
+
     </div>
   </div>
 </section>
@@ -182,9 +282,12 @@ const jsonLd = {
     <div class="eyebrow u-mt-18">Recent Work</div>
     <h2 class="h2 u-mt-14">Real Northern Virginia projects.</h2>
     <div class="coll-grid">
-      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/kitchen-marble.webp" alt="Marble kitchen renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Kitchen renovation</h3></div></article>
-      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/bath-marble.webp" alt="Marble primary bathroom by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Primary bath</h3></div></article>
-      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/whole-home-exterior.webp" alt="Whole-home renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Whole-home renovation</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" loading="lazy" src="/assets/img/bath-marble.webp" alt="Marble primary bathroom remodel by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Primary bath</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" loading="lazy" src="/assets/img/kitchen-marble.webp" alt="Marble kitchen renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Kitchen renovation</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" loading="lazy" src="/assets/img/bath-shower.webp" alt="Walk-in tiled shower remodel by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Walk-in shower</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" loading="lazy" src="/assets/img/kitchen-island.webp" alt="Custom kitchen island and cabinetry by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Island &amp; cabinetry</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" loading="lazy" src="/assets/img/basement-family.webp" alt="Finished basement family room by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Basement family room</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" loading="lazy" src="/assets/img/whole-home-exterior.webp" alt="Whole-home renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Whole-home renovation</h3></div></article>
     </div>
   </div>
 </section>
@@ -192,12 +295,76 @@ const jsonLd = {
 <!-- CTA BAND -->
 <section class="cta-band" data-reveal>
   <div class="container">
-    <p class="cta-band__copy">See what your project could look like.<small>5.0★ · 47 Google reviews · licensed &amp; insured</small></p>
+    <p class="cta-band__copy">See what your project could look like.<small>5.0★ on Google · licensed &amp; insured</small></p>
     <div class="cta-band__actions">
       <a class="btn btn--dark" href="#quote">Get My Free Quote
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
       <a class="btn btn--phone" href="tel:+17039191645">Call (703) 919-1645</a>
+    </div>
+  </div>
+</section>
+
+<!-- 5b · SERVICE AREA -->
+<section class="section section--onyx" data-reveal id="areas">
+  <div class="container">
+    <svg class="roofline" viewBox="0 0 44 16" fill="none" aria-hidden="true"><path d="M2 14 22 3l20 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="eyebrow u-mt-18">Where We Work</div>
+    <h2 class="h2 h2--sm u-mt-14">Northern Virginia and close-in Maryland.</h2>
+    <div class="areas-grid">
+      <div class="areas-col">
+        <div class="areas-head">Virginia</div>
+        <div class="areas-list">
+          <a href="#quote">Tysons</a>
+          <a href="#quote">McLean</a>
+          <a href="#quote">Arlington</a>
+          <a href="#quote">Alexandria</a>
+          <a href="#quote">Great Falls</a>
+        </div>
+      </div>
+      <div class="areas-col">
+        <div class="areas-head">Maryland</div>
+        <div class="areas-list">
+          <a href="#quote">Bethesda</a>
+          <a href="#quote">Potomac</a>
+        </div>
+        <p class="prose" style="margin-top:18px;font-size:.94rem">Not sure if you are in range? Call <a class="link-gold" href="tel:+17039191645">(703) 919-1645</a> and we will tell you straight away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5c · FAQ -->
+<section class="section--lg section--deep" data-reveal id="faq">
+  <div class="container">
+    <svg class="roofline" viewBox="0 0 44 16" fill="none" aria-hidden="true"><path d="M2 14 22 3l20 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <div class="eyebrow u-mt-18">Before You Call</div>
+    <h2 class="h2 u-mt-14 measure--title">The questions we get asked every week.</h2>
+    <div class="faq">
+      <details>
+        <summary>How much will my remodel cost?</summary>
+        <div class="faq__a">There is no honest answer to that before someone has seen the space. We come out, look at the scope and give you a written, itemized quote &mdash; free, and yours to keep whether or not you hire us. What we will not do is quote you a number over the phone and revise it upward once the work starts.</div>
+      </details>
+      <details>
+        <summary>Do you offer financing?</summary>
+        <div class="faq__a">Yes. Financing options are available, and we will walk you through them during the consultation so you know what the project looks like month to month before you commit to anything.</div>
+      </details>
+      <details>
+        <summary>What does the warranty cover?</summary>
+        <div class="faq__a">Every project carries a <b>five-year warranty on our labor</b>. Materials and appliances keep their own manufacturer warranties, which we hand over to you at the final walk-through.</div>
+      </details>
+      <details>
+        <summary>Who pulls the permits?</summary>
+        <div class="faq__a">We do. Drawings, permit applications and inspections in Fairfax County, Arlington County and Montgomery County, MD are handled by us as part of the project.</div>
+      </details>
+      <details>
+        <summary>Do you design, or do I need my own designer?</summary>
+        <div class="faq__a">We are design and build under one roof. You can bring your own drawings if you have them, but most clients start with us from a blank room &mdash; we design the layout around how you actually use the space, then build it with our own crew.</div>
+      </details>
+      <details>
+        <summary>Which areas do you serve?</summary>
+        <div class="faq__a">Tysons, McLean, Arlington, Alexandria and Great Falls in Virginia, plus Bethesda and Potomac in Maryland. If you are just outside that, call and ask &mdash; we will give you a straight yes or no.</div>
+      </details>
     </div>
   </div>
 </section>
@@ -213,7 +380,7 @@ const jsonLd = {
       <ul class="consult-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Written, itemized quote — no mystery pricing.</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Permits &amp; inspections handled for you.</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Licensed, insured &amp; available 24/7.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg><span>Licensed, insured &amp; backed by a 5-year labor warranty.</span></li>
       </ul>
       <div class="trust-closer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -227,7 +394,7 @@ const jsonLd = {
 
     <div>
       <form id="lead-form" novalidate>
-        <div id="form-fields">
+        <div class="form-fields" id="form-fields">
           <p class="fh">Free Quote</p>
           <h3>Tell us about your project</h3>
           <p class="sub">We'll reply within one business day.</p>
@@ -287,6 +454,7 @@ const jsonLd = {
 </div>
 
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(faqLd)}></script>
 
 <!-- single-CTA landing needs only reveal + form; menu code is guarded -->
 <script is:inline src="/main.js" defer></script>
