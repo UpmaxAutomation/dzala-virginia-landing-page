@@ -268,17 +268,15 @@ footer{background:var(--onyx-deep);border-top:1px solid var(--ivory-06);padding:
 .foot-col a:hover{color:var(--ivory)}
 .foot-bottom{padding-top:26px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:.8rem;color:var(--ivory-55)}
 
-/* ============ Problem — struck-out editorial list ============ */
-.strike-list{list-style:none;margin-top:clamp(28px,4vw,48px);display:grid;gap:clamp(12px,1.8vw,22px)}
-.strike-list li{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,3.6vw,2.9rem);line-height:1.15;color:var(--ivory-55);width:-moz-fit-content;width:fit-content;max-width:100%;position:relative;transition:color .4s}
-.strike-list li::after{content:"";position:absolute;left:-.05em;right:-.05em;top:54%;height:clamp(3px,.4vw,5px);background:var(--gold);border-radius:3px;transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease-zoom)}
-[data-reveal].in .strike-list li::after,.reveal.in .strike-list li::after{transform:scaleX(1)}
-[data-reveal].in .strike-list li:nth-child(2)::after{transition-delay:.12s}
-[data-reveal].in .strike-list li:nth-child(3)::after{transition-delay:.24s}
-[data-reveal].in .strike-list li:nth-child(4)::after{transition-delay:.36s}
-@media(prefers-reduced-motion:reduce){.strike-list li::after{transform:scaleX(1)}}
-.pain-turn{margin-top:clamp(32px,4vw,52px);font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.6rem);line-height:1.2;color:var(--white);max-width:20ch;font-weight:600}
-.pain-turn b{color:var(--gold);font-weight:600}
+/* ============ Approach — design & quality philosophy ============ */
+.approach-quote{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.14;color:var(--white)}
+.approach-quote em{font-style:italic;color:var(--gold)}
+.pts{list-style:none;display:grid;gap:0;margin-top:4px}
+.pts li{padding:clamp(20px,2.4vw,26px) 0;border-top:1px solid var(--ivory-12);display:grid;gap:7px}
+.pts li:last-child{border-bottom:1px solid var(--ivory-12)}
+.pts .n{font-family:var(--mono,'Montserrat');font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.pts .t{font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.5rem);color:var(--white);font-weight:600}
+.pts .d{color:var(--ivory-72);font-size:.98rem;line-height:1.6;max-width:52ch}
 
 /* ============ SONIC BOOM: trust closer ============ */
 .trust-closer{margin-top:24px;display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(249,178,51,.1);border:1px solid rgba(249,178,51,.28);color:var(--ivory)}
