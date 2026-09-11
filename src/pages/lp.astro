@@ -1,3 +1,19 @@
+---
+const jsonLd = {
+  "@context":"https://schema.org",
+  "@type":"GeneralContractor",
+  "name":"Dzala General Contractor",
+  "image":"https://dzalacontractor.com/assets/logo/dzala-logo-dark.webp",
+  "url":"https://dzalacontractor.com/",
+  "telephone":"+1-703-919-1645",
+  "email":"dzalausa@gmail.com",
+  "priceRange":"$$",
+  "address":{"@type":"PostalAddress","streetAddress":"8609 Westwood Center Dr, Ste 110, Unit 119","addressLocality":"Tysons","addressRegion":"VA","postalCode":"22182","addressCountry":"US"},
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"47"},
+  "areaServed":["Tysons","McLean","Vienna","Oakton","Great Falls","Arlington","Alexandria","Falls Church","Reston","Herndon","Bethesda","Potomac"],
+  "makesOffer":["Kitchen Remodeling","Bathroom Remodeling","Basement Remodeling","Whole-Home Remodeling","Home Additions","Bedroom Remodeling","Garage Remodeling","Commercial Remodeling"]
+};
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +24,9 @@
 <link rel="canonical" href="https://dzalacontractor.com/" />
 <meta name="theme-color" content="#30373E" />
 
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Dzala General Contractor" />
@@ -24,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
 <a href="#quote" class="skip">Skip to quote form</a>
@@ -42,7 +58,7 @@
 <header id="site-header">
   <div class="container nav">
     <a href="#top" aria-label="Dzala General Contractor, home">
-      <img class="logo" src="assets/logo/dzala-logo-light.webp" alt="Dzala General Contractor" width="900" height="211" />
+      <img class="logo" src="/assets/logo/dzala-logo-light.webp" alt="Dzala General Contractor" width="900" height="211" />
     </a>
     <div class="nav-cta">
       <a class="nav-phone" href="tel:+17039191645">
@@ -58,7 +74,7 @@
 
 <!-- 1 · HOOK -->
 <section class="hero">
-  <div class="hero__media" aria-hidden="true"><img class="hero__img" src="assets/img/hero-kitchen.webp" alt="" /></div>
+  <div class="hero__media" aria-hidden="true"><img class="hero__img" src="/assets/img/hero-kitchen.webp" alt="" /></div>
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="container hero__inner">
     <div class="hero__copy">
@@ -137,9 +153,9 @@
     <div class="eyebrow u-mt-18">Recent Work</div>
     <h2 class="h2 u-mt-14">Real Northern Virginia projects.</h2>
     <div class="coll-grid">
-      <article class="coll-card img-frame"><img class="img-zoom" src="assets/img/kitchen-marble.webp" alt="Marble kitchen renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Kitchen renovation</h3></div></article>
-      <article class="coll-card img-frame"><img class="img-zoom" src="assets/img/bath-marble.webp" alt="Marble primary bathroom by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Primary bath</h3></div></article>
-      <article class="coll-card img-frame"><img class="img-zoom" src="assets/img/whole-home-exterior.webp" alt="Whole-home renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Whole-home renovation</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/kitchen-marble.webp" alt="Marble kitchen renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Kitchen renovation</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/bath-marble.webp" alt="Marble primary bathroom by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Primary bath</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/whole-home-exterior.webp" alt="Whole-home renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Whole-home renovation</h3></div></article>
     </div>
   </div>
 </section>
@@ -228,24 +244,9 @@
   <a class="btn btn--primary" href="#quote">Free quote</a>
 </div>
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"GeneralContractor",
-  "name":"Dzala General Contractor",
-  "image":"https://dzalacontractor.com/assets/logo/dzala-logo-dark.webp",
-  "url":"https://dzalacontractor.com/",
-  "telephone":"+1-703-919-1645",
-  "email":"dzalausa@gmail.com",
-  "priceRange":"$$",
-  "address":{"@type":"PostalAddress","streetAddress":"8609 Westwood Center Dr, Ste 110, Unit 119","addressLocality":"Tysons","addressRegion":"VA","postalCode":"22182","addressCountry":"US"},
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"47"},
-  "areaServed":["Tysons","McLean","Vienna","Oakton","Great Falls","Arlington","Alexandria","Falls Church","Reston","Herndon","Bethesda","Potomac"],
-  "makesOffer":["Kitchen Remodeling","Bathroom Remodeling","Basement Remodeling","Whole-Home Remodeling","Home Additions","Bedroom Remodeling","Garage Remodeling","Commercial Remodeling"]
-}
-</script>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
 <!-- single-CTA landing needs only reveal + form; menu code is guarded -->
-<script src="main.js" defer></script>
+<script is:inline src="/main.js" defer></script>
 </body>
 </html>

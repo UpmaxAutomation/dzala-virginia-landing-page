@@ -1,3 +1,23 @@
+---
+const jsonLd = {
+  "@context":"https://schema.org",
+  "@type":"GeneralContractor",
+  "name":"Dzala General Contractor",
+  "image":"https://dzalacontractor.com/assets/logo/dzala-logo-dark.webp",
+  "url":"https://dzalacontractor.com/",
+  "telephone":"+1-703-919-1645",
+  "email":"dzalausa@gmail.com",
+  "priceRange":"$$",
+  "address":{"@type":"PostalAddress","streetAddress":"8609 Westwood Center Dr, Ste 110, Unit 119","addressLocality":"Tysons","addressRegion":"VA","postalCode":"22182","addressCountry":"US"},
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"19:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"09:00","closes":"15:00"}
+  ],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"47"},
+  "areaServed":["Tysons","McLean","Vienna","Oakton","Great Falls","Arlington","Alexandria","Falls Church","Reston","Herndon","Bethesda","Potomac"],
+  "makesOffer":["Kitchen Remodeling","Bathroom Remodeling","Basement Remodeling","Whole-Home Remodeling","Home Additions","Bedroom Remodeling","Garage Remodeling","Commercial Remodeling"]
+};
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +29,9 @@
 <meta name="theme-color" content="#30373E" />
 
 <!-- Favicons -->
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
 <!-- Open Graph / social -->
 <meta property="og:type" content="website" />
@@ -26,7 +46,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
 <a href="#services" class="skip">Skip to content</a>
@@ -44,7 +64,7 @@
 <header id="site-header">
   <div class="container nav">
     <a href="#top" aria-label="Dzala General Contractor, home">
-      <img class="logo" src="assets/logo/dzala-logo-light.webp" alt="Dzala General Contractor" width="900" height="211" />
+      <img class="logo" src="/assets/logo/dzala-logo-light.webp" alt="Dzala General Contractor" width="900" height="211" />
     </a>
     <nav class="nav-links">
       <a href="#services">Services</a>
@@ -79,7 +99,7 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero__media" aria-hidden="true">
-    <img class="hero__img" src="assets/img/hero-kitchen.webp" alt="" />
+    <img class="hero__img" src="/assets/img/hero-kitchen.webp" alt="" />
   </div>
   <div class="hero__scrim" aria-hidden="true"></div>
   <div class="container hero__inner">
@@ -146,27 +166,27 @@
     </div>
     <div class="coll-grid">
       <article class="coll-card img-frame">
-        <img class="img-zoom" src="assets/img/kitchen-island.webp" alt="Custom kitchen remodel by Dzala General Contractor" /><div class="scrim-bottom"></div>
+        <img class="img-zoom" src="/assets/img/kitchen-island.webp" alt="Custom kitchen remodel by Dzala General Contractor" /><div class="scrim-bottom"></div>
         <div class="coll-card__body"><h3 class="coll-card__name">Kitchen Remodeling</h3><p class="coll-card__copy">Custom kitchens designed around how you cook, gather and entertain.</p><span class="coll-card__more">Learn More</span></div>
       </article>
       <article class="coll-card img-frame">
-        <img class="img-zoom" src="assets/img/bath-shower.webp" alt="Bathroom remodel with walk-in shower by Dzala General Contractor" /><div class="scrim-bottom"></div>
+        <img class="img-zoom" src="/assets/img/bath-shower.webp" alt="Bathroom remodel with walk-in shower by Dzala General Contractor" /><div class="scrim-bottom"></div>
         <div class="coll-card__body"><h3 class="coll-card__name">Bathroom Remodeling</h3><p class="coll-card__copy">Full gut renovations, tub to shower conversions and luxury primary baths.</p><span class="coll-card__more">Learn More</span></div>
       </article>
       <article class="coll-card img-frame">
-        <img class="img-zoom" src="assets/img/basement-family.webp" alt="Finished basement family room by Dzala General Contractor" /><div class="scrim-bottom"></div>
+        <img class="img-zoom" src="/assets/img/basement-family.webp" alt="Finished basement family room by Dzala General Contractor" /><div class="scrim-bottom"></div>
         <div class="coll-card__body"><h3 class="coll-card__name">Basement Remodeling</h3><p class="coll-card__copy">Home theaters, in-law suites, offices and gyms, finished to code.</p><span class="coll-card__more">Learn More</span></div>
       </article>
       <article class="coll-card img-frame">
-        <img class="img-zoom" src="assets/img/living-wide.webp" alt="Whole-home renovation living space by Dzala General Contractor" /><div class="scrim-bottom"></div>
+        <img class="img-zoom" src="/assets/img/living-wide.webp" alt="Whole-home renovation living space by Dzala General Contractor" /><div class="scrim-bottom"></div>
         <div class="coll-card__body"><h3 class="coll-card__name">Whole-Home Remodeling</h3><p class="coll-card__copy">Every room on one plan, one schedule and one contract.</p><span class="coll-card__more">Learn More</span></div>
       </article>
       <article class="coll-card img-frame">
-        <img class="img-zoom" src="assets/img/hero-addition.webp" alt="Home addition by Dzala General Contractor" /><div class="scrim-bottom"></div>
+        <img class="img-zoom" src="/assets/img/hero-addition.webp" alt="Home addition by Dzala General Contractor" /><div class="scrim-bottom"></div>
         <div class="coll-card__body"><h3 class="coll-card__name">Home Additions</h3><p class="coll-card__copy">Second story, kitchen, bathroom and in-law suite additions.</p><span class="coll-card__more">Learn More</span></div>
       </article>
       <article class="coll-card img-frame">
-        <img class="img-zoom" src="assets/img/bedroom-suite.webp" alt="Primary bedroom suite remodel by Dzala General Contractor" /><div class="scrim-bottom"></div>
+        <img class="img-zoom" src="/assets/img/bedroom-suite.webp" alt="Primary bedroom suite remodel by Dzala General Contractor" /><div class="scrim-bottom"></div>
         <div class="coll-card__body"><h3 class="coll-card__name">Bedroom &amp; Garage</h3><p class="coll-card__copy">Primary suites, closets and garage conversions to living space, offices and gyms.</p><span class="coll-card__more">Learn More</span></div>
       </article>
     </div>
@@ -231,12 +251,12 @@
       <a href="#quote" class="link-underline">Start Yours</a>
     </div>
     <div class="coll-grid">
-      <article class="coll-card img-frame"><img class="img-zoom" src="assets/img/kitchen-marble.webp" alt="Marble kitchen renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Kitchen renovation</h3></div></article>
-      <article class="coll-card img-frame"><img class="img-zoom" src="assets/img/bath-marble.webp" alt="Marble primary bathroom by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Primary bath</h3></div></article>
-      <article class="coll-card img-frame"><img class="img-zoom" src="assets/img/basement-lounge.webp" alt="Finished basement lounge by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Basement suite</h3></div></article>
-      <article class="coll-card img-frame"><img class="img-zoom" src="assets/img/porch-addition.webp" alt="Porch and home addition by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Home addition</h3></div></article>
-      <article class="coll-card img-frame"><img class="img-zoom" src="assets/img/whole-home-exterior.webp" alt="Whole-home renovation exterior by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Whole-home renovation</h3></div></article>
-      <article class="coll-card img-frame"><img class="img-zoom" src="assets/img/commercial-office.webp" alt="Commercial office build-out by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Commercial build-out</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/kitchen-marble.webp" alt="Marble kitchen renovation by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Kitchen renovation</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/bath-marble.webp" alt="Marble primary bathroom by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Primary bath</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/basement-lounge.webp" alt="Finished basement lounge by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Basement suite</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/porch-addition.webp" alt="Porch and home addition by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Home addition</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/whole-home-exterior.webp" alt="Whole-home renovation exterior by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Whole-home renovation</h3></div></article>
+      <article class="coll-card img-frame"><img class="img-zoom" src="/assets/img/commercial-office.webp" alt="Commercial office build-out by Dzala General Contractor" /><div class="scrim-bottom"></div><div class="coll-card__body"><h3 class="coll-card__name">Commercial build-out</h3></div></article>
     </div>
   </div>
 </section>
@@ -384,7 +404,7 @@
   <div class="container">
     <div class="foot-top">
       <div class="foot-brand">
-        <img class="logo logo--footer" src="assets/logo/dzala-logo-light.webp" alt="Dzala General Contractor" width="900" height="211" />
+        <img class="logo logo--footer" src="/assets/logo/dzala-logo-light.webp" alt="Dzala General Contractor" width="900" height="211" />
         <p>Your premier partner in remodeling across Northern Virginia — turning dreams into reality with over a decade of experience.</p>
       </div>
       <div class="foot-col">
@@ -417,27 +437,8 @@
 </div>
 
 <!-- LocalBusiness structured data -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"GeneralContractor",
-  "name":"Dzala General Contractor",
-  "image":"https://dzalacontractor.com/assets/logo/dzala-logo-dark.webp",
-  "url":"https://dzalacontractor.com/",
-  "telephone":"+1-703-919-1645",
-  "email":"dzalausa@gmail.com",
-  "priceRange":"$$",
-  "address":{"@type":"PostalAddress","streetAddress":"8609 Westwood Center Dr, Ste 110, Unit 119","addressLocality":"Tysons","addressRegion":"VA","postalCode":"22182","addressCountry":"US"},
-  "openingHoursSpecification":[
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"19:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"09:00","closes":"15:00"}
-  ],
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"47"},
-  "areaServed":["Tysons","McLean","Vienna","Oakton","Great Falls","Arlington","Alexandria","Falls Church","Reston","Herndon","Bethesda","Potomac"],
-  "makesOffer":["Kitchen Remodeling","Bathroom Remodeling","Basement Remodeling","Whole-Home Remodeling","Home Additions","Bedroom Remodeling","Garage Remodeling","Commercial Remodeling"]
-}
-</script>
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
 
-<script src="main.js" defer></script>
+<script is:inline src="/main.js" defer></script>
 </body>
 </html>
