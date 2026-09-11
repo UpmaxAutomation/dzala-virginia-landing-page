@@ -286,6 +286,16 @@ footer{background:var(--onyx-deep);border-top:1px solid var(--ivory-06);padding:
 .trust-badges span{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--ivory-82);background:rgba(244,245,247,.05);border:1px solid var(--ivory-12);padding:9px 15px;border-radius:100px}
 .trust-badges svg{width:15px;height:15px;color:var(--gold)}
 
+/* ---- CTA band (repeatable, conversion-focused) ---- */
+.cta-band{background:var(--gold);color:var(--onyx)}
+.cta-band .container{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap;padding-block:clamp(28px,4vw,40px)}
+.cta-band__copy{font-family:var(--serif);font-weight:600;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.15;max-width:22ch;color:var(--onyx)}
+.cta-band__copy small{display:block;font-family:var(--sans);font-weight:600;font-size:.82rem;letter-spacing:.02em;text-transform:none;color:rgba(48,55,62,.72);margin-top:6px}
+.cta-band__actions{display:flex;flex-wrap:wrap;gap:14px}
+.cta-band .btn--dark{border-color:var(--onyx)}
+.cta-band .btn--phone{background:transparent;color:var(--onyx);border-color:rgba(48,55,62,.45)}
+.cta-band .btn--phone:hover{background:var(--onyx);color:var(--gold);border-color:var(--onyx);transform:translateY(-2px)}
+
 /* ---- reveal ---- */
 [data-reveal],.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s var(--ease-zoom)}
 [data-reveal].in,.reveal.in{opacity:1;transform:none}
